@@ -119,7 +119,8 @@ http://miradontsoa.com
     padding: 0.75rem 1.5rem;
     cursor: pointer;
     min-height: 46px;
-    line-height: 1.2; }
+    line-height: 1.2; 
+    color:#DDE5E7; }
     .btn.no-border {
       border: none; }
   
@@ -1196,6 +1197,7 @@ http://miradontsoa.com
     margin-right: auto; }
   
   .media .icon {
+    color:#DDE5E7; 
     font-size: 4.5rem;
     display: block;
     width: 1em;
@@ -2251,9 +2253,11 @@ http://miradontsoa.com
         margin-left: 8px;
         margin-right: 8px; }
         .page-header-alpha .navbar-brand .text .line {
+          color:#DDE5E7; 
           display: block; }
           .page-header-alpha .navbar-brand .text .line.sub {
             font-size: 0.75rem;
+            color:#DDE5E7; 
             opacity: 0.5; }
     .page-header-alpha .all-menu-wrapper {
       justify-content: flex-end;
@@ -2525,6 +2529,10 @@ http://miradontsoa.com
     .page-header-alpha .navbar-mainmenu {
       background: none; } }
   
+      #qmenu {
+        color:#DDE5E7; 
+      }
+
   .menu-icon {
     height: 40px;
     width: 40px;
@@ -2710,7 +2718,7 @@ http://miradontsoa.com
   /* 1.5 . Additional UI */
   /* a. Page cover */
   .page-cover {
-    background-image: linear-gradient(to right, rgba(4,11,41, 0.8), rgba(4,23,70, 0.8), rgba(7,39,118));
+    background-image: linear-gradient(to right,black, rgba(4,11,41, 0.8), rgba(4,23,70, 0.8), rgba(7,39,118));
     width: 100%;
     position: fixed;
     height: 120%;
@@ -2822,7 +2830,7 @@ http://miradontsoa.com
       /*  particles.js container */
       width: 100%;
       height: 100%;
-      background-color: #b61924;
+      /* background-color: #b61924; */
       /* background-image: url(""); */
       background-size: cover;
       background-position: 50% 50%;
@@ -3283,6 +3291,7 @@ http://miradontsoa.com
       margin-right: auto; } }
   
   .section-content .title-desc {
+    color:#DDE5E7; 
     margin-bottom: 2rem; }
     @media (min-width: 768px) {
       .section-content .title-desc {
@@ -3346,9 +3355,11 @@ http://miradontsoa.com
     border-top: 2px solid #D1335B; }
   
   .section-content h4 {
+    color:#DDE5E7; 
     display: inline-block; }
     .section-content h4 strong {
-      color: #D1335B; }
+      color:#DDE5E7; }
+      /* color: #D1335B; } */
   
   .section-content ul {
     padding-left: 1rem; }
@@ -3453,7 +3464,8 @@ http://miradontsoa.com
       height: 0;
       left: 0;
       top: 0.5em;
-      content: ""; }
+      content: "";
+      color: #DDE5E7; }
   
   .section-content h2.border-white,
   .section-content h3.border-white,
@@ -4434,6 +4446,7 @@ http://miradontsoa.com
         font-size: 3rem; } }
   
   .display-title {
+    color: #DDE5E7;
     margin-bottom: 1rem; }
   
   @media (max-width: 575px) {
@@ -5259,6 +5272,10 @@ http://miradontsoa.com
     .about {
       animation:bounceInLeft;
       animation-duration:10s;
+    }
+
+    .sec-about {
+      color:#DDE5E7; 
     }
   
     /* .ml10 {

@@ -8,7 +8,7 @@ import 'fullpage.js/vendors/scrolloverflow' // Optional. When using scrollOverfl
 
 
 // import ReactAnime from 'react-animejs';
-// import Particles from 'react-particles-js';
+import Particles from 'react-particles-js';
 // import Swiper from "swiper";
 // import Swiper, { Navigation, Pagination } from 'swiper';
 
@@ -18,7 +18,9 @@ class App extends React.Component {
     
     return (
       <div class="App">
-        {/* <Particles /> */}
+        <div style={{ position: 'absolute'}}>
+        <Particles height="100vh" width="100vw"  />
+        </div>
         {/* <Anime /> */}
         <header className="page-header navbar page-header-alpha scrolled-white menu-right topmenu-right">
           <button className="navbar-toggler site-menu-icon" id="navMenuIcon">
@@ -123,6 +125,13 @@ class App extends React.Component {
               <div className="section-content anim">
                 <div className="row">
                   <div className="col-12 col-md-6 text-left">
+                    <div className="col-12 col-md-6 right-content hidden-sm center-vh">
+                      <div className="section-content">
+                        <div className="illustr zoomout-1">
+                          <img className="logo" src="img/logo_white.png" alt="Logo" />
+                        </div>
+                      </div>
+                    </div>
                     <div className="title-desc">
                       <div className="ml14">
                         <span className="text-wrapper">
@@ -148,12 +157,8 @@ class App extends React.Component {
                     </div>
                   </div>
 
-                  <div className="col-12 col-md-6 right-content hidden-sm center-vh">
-                    <div className="section-content">
-                      <div className="illustr zoomout-1">
-                        <img className="logo" src="img/logo_white.png" alt="Logo" />
-                      </div>
-                    </div>
+                  <div className="col-12 col-md-6 ">
+                  <img className="img" src="img/items/img-people1-square.jpg" alt="" height="100%" width="100%" />
                   </div>
                 </div>
               </div>
@@ -200,7 +205,7 @@ class App extends React.Component {
                 {/* style="animation:bounceInLeft; animation-duration:10s" */}
               </div>
 
-              <div className="row">
+              <div className="row sec-about">
                 <div className="col- col-md-6 col-lg-6">
                   <div className="section-content zoomout-1 fade-1">
                     <h2>Vision</h2>
