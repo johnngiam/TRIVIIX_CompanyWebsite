@@ -19,7 +19,24 @@ class App extends React.Component {
     return (
       <div class="App">
         <div style={{ position: 'absolute'}}>
-        <Particles height="100vh" width="100vw"  />
+        <Particles height="100vh" width="100vw"  
+          params={{
+            "particles": {
+                "number": {
+                    "value": 50
+                },
+                "size": {
+                    "value": 3
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    }
+                }
+            }}} />
         </div>
         {/* <Anime /> */}
         <header className="page-header navbar page-header-alpha scrolled-white menu-right topmenu-right">
