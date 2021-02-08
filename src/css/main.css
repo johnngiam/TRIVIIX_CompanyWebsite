@@ -2725,7 +2725,7 @@ http://miradontsoa.com
       width: 100%;
       height: 100%;
       /*  Page cover background image,color */
-      /* background: url('./img/bg-default.jpg'); */
+      background: url('./img/bg-gradient4.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -5084,19 +5084,19 @@ http://miradontsoa.com
     }
     
     .card__front1 {
-      background: url('./img/ecommerce2-1.png');
+      /* background: url('./img/ecommerce2-1.png'); */
       background-size: cover;
       transition: .4 all linear;
     }
   
     .card__front2 {
-      background: url('./img/19546-1.png');
+      /* background: url('./img/19546-1.png'); */
       background-size: cover;
       transition: .4 all linear;
     }
   
     .card__front3 {
-      background: url('./img/test1-1.png');
+      /* background: url('./img/test1-1.png'); */
       background-size: cover;
       transition: .4 all linear;
     }
