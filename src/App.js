@@ -158,7 +158,7 @@ class App extends React.Component {
                   </div>
 
                   <div className="col-12 col-md-6 ">
-                  <img className="img" src="img/items/img-people1-square.jpg" alt="" height="100%" width="100%" />
+                  <img className="img" src="img/motherboard.jpg" alt="" height="400px" width="550px" />
                   </div>
                 </div>
               </div>
