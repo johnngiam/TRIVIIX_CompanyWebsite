@@ -45,7 +45,7 @@ a {
 
 .page-cover:after {
   content: "";
-  background: linear-gradient(to left, #D1335B, #00152e);
+  /* background: linear-gradient(to left, #D1335B, #00152e); */
   position: absolute;
   left: 0;
   right: 0;
