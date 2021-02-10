@@ -5,6 +5,8 @@ import "./css/main.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import 'fullpage.js/vendors/scrolloverflow' // Optional. When using scrollOverflow:true
 // import './fullpage.scrollHorizontally.min' // Optional. When using fullpage extensions
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 
 // import ReactAnime from 'react-animejs';
@@ -15,7 +17,7 @@ import Particles from 'react-particles-js';
 class App extends React.Component {
   render() {
     // const {Anime} = ReactAnime
-    
+    AOS.init();
     return (
       <div class="App">
         <div style={{ position: 'absolute'}}>
@@ -178,6 +180,18 @@ class App extends React.Component {
                   <img className="img" src="img/motherboard.jpg" alt="" height="400px" width="550px" />
                   </div>
                 </div>
+                <div className="row">
+                  <div
+                    className="col-12"
+                    data-section="home"
+                  >
+                    <div className="section-wrapper twoside anim">
+                      <div className="section-title text-center">
+                        <div className="display-4 display-title about">About Us</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -257,9 +271,10 @@ class App extends React.Component {
             data-section="services"
           >
             <div className="section-wrapper twoside anim">
-              <span className="section-title text-center ">
-                <h2 className="display-4 display-title ml2">Services</h2>
+              {/* <span className="section-title text-center ">
+                <h2 className="display-4 display-title ml2">Area of Expertise</h2>
               </span>
+
               <p
                 id="txtabout"
                 className="section-title text-center anim-2 typewriter"
@@ -267,9 +282,56 @@ class App extends React.Component {
                 data-type='[ "What we can provide to you are out of your imagination." ]'
               >
                 <span className="wrap"></span>
-              </p>
+              </p> */}
 
-              <div className="item row justify-content-between fade-1">
+              <div className="expert-container" >
+                <div className="child-expert1" data-aos="fade-right" 
+                 data-aos-offset="200"
+                 data-aos-delay="50"
+                 data-aos-duration="4000">
+                  <div className="">
+                    <h4 className="main_title" >
+                      <i className="icon ion-ios-world-outline"></i> Mobile & Web Development</h4>
+                    <p className="text-justify content" >
+                      Create alluring and crackerjack mobile application and
+                      web development services for you. Your users will be
+                      "The Fan of Your Brand"
+                    </p>
+                  </div>
+                </div>
+                <div className="child-expert2 " data-aos="fade-down"
+                 data-aos-offset="200"
+                 data-aos-delay="50"
+                 data-aos-duration="4000"> 
+                  <div className="">
+                  <h4 className="main_title"><i className="icon ion-ios-world-outline"></i> Mobile & Web Development</h4>
+                    <p className="text-justify content">
+                      Create alluring and crackerjack mobile application and
+                      web development services for you. Your users will be
+                      "The Fan of Your Brand"
+                    </p>
+                  </div>
+                </div>
+                <div className="child-expert3" data-aos="fade-left"
+                 data-aos-offset="200"
+                 data-aos-delay="50"
+                 data-aos-duration="4000">
+                  <div className="">
+                  <h4 className="main_title"><i className="icon ion-ios-world-outline"></i> Mobile & Web Development</h4>
+                    <p className="text-justify content">
+                      Create alluring and crackerjack mobile application and
+                      web development services for you. Your users will be
+                      "The Fan of Your Brand"
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+              <div className="col-12 col-md-6 section-wrapper twoside anim section-title text-center" margin-top="1vw">
+                <img className="img" src="img/cpu.jpg" alt="" height="350px" width="600px" position="absolute"/>
+              </div>
+              
+              {/* <div className="item row justify-content-between fade-1">
                 <div className="col-12 col-md-6 col-lg-6">
                   <div className="section-content zoomout-1 fade-4">
                     <div className="media">
@@ -358,7 +420,7 @@ class App extends React.Component {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 

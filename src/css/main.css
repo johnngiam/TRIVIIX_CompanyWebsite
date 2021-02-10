@@ -5277,7 +5277,45 @@ http://miradontsoa.com
     .sec-about {
       color:#DDE5E7; 
     }
+
+    .expert-container {
+      position:relative;
+      display:inline-block;
+    }
+
+    .child-expert1 {
+      /* animation: bounceInLeft;
+      animation-duration:10s; */
+      position:absolute; 
+      left: -2vw;
+      top: -20vw;
+    }
+
+    .child-expert2 {
+      /* animation: fadeIn;
+      animation-duration:10s; */
+      position:absolute; 
+      left: 26vw;
+      top: -20vw;
+    }
+
+    .child-expert3 {
+      /* animation: bounceInRight;
+      animation-duration:10s; */
+      position:absolute; 
+      left: 52vw;
+      top: -20vw;
+    }
+
+    .content {
+      line-height: 1.45 !important;
+      font-size: 1.083vw;
+    }
   
+    .main_title {
+      line-height: 1.2 !important;
+      color:#DDE5E7;
+    }
     /* .ml10 {
       position: relative;
       font-weight: 900;
