@@ -19,7 +19,7 @@ class App extends React.Component {
     // const {Anime} = ReactAnime
     AOS.init();
     return (
-      <div class="App">
+      <div className="App">
         <div style={{ position: 'absolute'}}>
         <Particles height="100vh" width="100vw"  
           params={{
