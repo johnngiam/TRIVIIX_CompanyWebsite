@@ -5281,30 +5281,66 @@ http://miradontsoa.com
     .expert-container {
       position:relative;
       display:inline-block;
+      height:6vw;
     }
 
     .child-expert1 {
-      /* animation: bounceInLeft;
-      animation-duration:10s; */
       position:absolute; 
       left: -2vw;
-      top: -20vw;
+      top: -4vw;
+      animation-duration: 10s;
+      animation-delay: 2s;
+      width: 15vw;
     }
 
     .child-expert2 {
-      /* animation: fadeIn;
-      animation-duration:10s; */
       position:absolute; 
       left: 26vw;
-      top: -20vw;
+      top: -4vw;
+      animation-duration: 10s;
+      animation-delay: 2s;
+      width: 15vw;
     }
 
     .child-expert3 {
-      /* animation: bounceInRight;
-      animation-duration:10s; */
       position:absolute; 
       left: 52vw;
-      top: -20vw;
+      top: -4vw;
+      animation-duration: 10s;
+      animation-delay: 2s;
+      width: 15vw;
+    }
+
+    .child-expert4 {
+      position:absolute; 
+      left: -2vw;
+      bottom: -5vw;
+      animation-duration: 10s;
+      animation-delay: 2s;
+      width: 15vw;
+    }
+
+    .child-expert5 {
+      position:absolute; 
+      left: 26vw;
+      bottom: -5vw;
+      animation-duration: 10s;
+      animation-delay: 2s;
+      width: 15vw;
+    }
+
+    .child-expert6 {
+      position:absolute; 
+      left: 52vw;
+      bottom: -5vw;
+      animation-duration: 10s;
+      animation-delay: 2s;
+      width: 15vw;
+    }
+
+    .project {
+      animation-duration: 5s !important;
+      bottom: -3vw !important;
     }
 
     .content {
@@ -5316,6 +5352,16 @@ http://miradontsoa.com
       line-height: 1.2 !important;
       color:#DDE5E7;
     }
+
+    .typewrite h5 {
+      line-height: 1.25 !important;
+    }
+
+    .typewrite {
+      font-size: 1.053vw;
+      line-height: 1.25 !important;
+    }
+
     /* .ml10 {
       position: relative;
       font-weight: 900;

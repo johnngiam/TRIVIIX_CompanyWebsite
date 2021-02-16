@@ -5,9 +5,10 @@ import "./css/main.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import 'fullpage.js/vendors/scrolloverflow' // Optional. When using scrollOverflow:true
 // import './fullpage.scrollHorizontally.min' // Optional. When using fullpage extensions
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-
+// import AOS from 'aos';
+// import 'aos/dist/aos.css'; // You can also use <link> for styles
+// import ScrollAnimation from 'react-animate-on-scroll';
+// import "../node_modules/animate.css/animate.min.css";
 
 // import ReactAnime from 'react-animejs';
 import Particles from 'react-particles-js';
@@ -17,7 +18,7 @@ import Particles from 'react-particles-js';
 class App extends React.Component {
   render() {
     // const {Anime} = ReactAnime
-    AOS.init();
+    // AOS.init();
     return (
       <div className="App">
         <div style={{ position: 'absolute'}}>
@@ -97,7 +98,7 @@ class App extends React.Component {
                 <li className="nav-item" data-menuanchor="services">
                   <a href="#services">
                     <i className="icon ion-ios-list-outline"></i>
-                    <span className="txt">Services</span>
+                    <span className="txt">Area of Expertise</span>
                   </a>
                 </li>
                 <li className="nav-item" data-menuanchor="projects">
@@ -106,10 +107,10 @@ class App extends React.Component {
                     <span className="txt">Projects</span>
                   </a>
                 </li>
-                <li className="nav-item" data-menuanchor="register">
-                  <a href="#register">
+                <li className="nav-item" data-menuanchor="collaboration">
+                  <a href="#collaboration">
                     <i className="icon ion-ios-compose-outline"></i>
-                    <span className="txt">Team</span>
+                    <span className="txt">Collaborations</span>
                   </a>
                 </li>
                 <li className="nav-item" data-menuanchor="contact">
@@ -204,7 +205,7 @@ class App extends React.Component {
               <div className="section-title text-center">
                 {/* <!-- <h5 className="title-bg">About</h5> -->
               <!-- <h1 id="txtabout" className="typewrite display-4 display-title anim-2 illustr zoomout-1" data-period="100000" data-type='[ "Everything is possible" ]'> -->
-                  <!-- <span className="wrap">display-4 display-title animated animatedFadeInUp fadeInUp</span> 
+                  <!-- <span className="wrap"></span> 
               </h1>--> */}
                 <h2 className="display-4 display-title anim-2 illustr zoomout-1 ml12">
                   Everything is possible
@@ -283,12 +284,14 @@ class App extends React.Component {
               >
                 <span className="wrap"></span>
               </p> */}
-
+              
               <div className="expert-container" >
-                <div className="child-expert1" data-aos="fade-right" 
-                 data-aos-offset="200"
-                 data-aos-delay="50"
-                 data-aos-duration="4000">
+                {/* <ScrollAnimation animateIn='fadeIn' animateOut='fadeOut'> delay-2s*/}
+                <div className="child-expert1 animated bounceInLeft delay-2s" >
+                {/* data-aos="fade-right" 
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="4000" */}
                   <div className="">
                     <h4 className="main_title" >
                       <i className="icon ion-ios-world-outline"></i> Mobile & Web Development</h4>
@@ -299,36 +302,87 @@ class App extends React.Component {
                     </p>
                   </div>
                 </div>
-                <div className="child-expert2 " data-aos="fade-down"
+                {/* </ScrollAnimation> */}
+
+                <div className="child-expert2 animated bounceInDown delay-2s" > 
+                {/* data-aos="fade-down"
                  data-aos-offset="200"
                  data-aos-delay="50"
-                 data-aos-duration="4000"> 
+                 data-aos-duration="4000" */}
                   <div className="">
-                  <h4 className="main_title"><i className="icon ion-ios-world-outline"></i> Mobile & Web Development</h4>
+                  <h4 className="main_title"><i className="icon ion-ios-world-outline"></i> Artificial Intelligence(AI) </h4>
                     <p className="text-justify content">
-                      Create alluring and crackerjack mobile application and
-                      web development services for you. Your users will be
-                      "The Fan of Your Brand"
+                      Let AI make faster, automated and more accurate
+                      decisions for you.
                     </p>
                   </div>
                 </div>
-                <div className="child-expert3" data-aos="fade-left"
+                <div className="child-expert3 animated bounceInRight delay-2s" >
+                {/* data-aos="fade-left"
                  data-aos-offset="200"
                  data-aos-delay="50"
-                 data-aos-duration="4000">
+                 data-aos-duration="4000" */}
                   <div className="">
-                  <h4 className="main_title"><i className="icon ion-ios-world-outline"></i> Mobile & Web Development</h4>
+                  <h4 className="main_title"><i className="icon ion-ios-world-outline"></i> Augmented Reality(AR) & Virtual Reality(VR) </h4>
                     <p className="text-justify content">
-                      Create alluring and crackerjack mobile application and
-                      web development services for you. Your users will be
-                      "The Fan of Your Brand"
+                      Let your users to be able to immerse deeper in your
+                      imagination world.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className=" section-wrapper twoside anim section-title text-center" margin-top="1vw">
+                <img className="img" src="img/cpu.jpg" alt="" height="340px" width="600px" position="relative"/>
+              </div>
+
+              <div className="expert-container" >
+                {/* <ScrollAnimation animateIn='fadeIn' animateOut='fadeOut'> delay-2s*/}
+                  <div className="child-expert4 animated bounceInLeft delay-2s" >
+                  {/* data-aos="fade-right" 
+                  data-aos-offset="200"
+                  data-aos-delay="50"
+                  data-aos-duration="4000" */}
+                    <div className="">
+                      <h4 className="main_title" >
+                        <i className="icon ion-ios-world-outline"></i> Training Workshop </h4>
+                      <p className="text-justify content" >
+                        Having fun and interative training workshop that make
+                        sure you will gain something after end of the
+                        workshop.
+                      </p>
+                    </div>
+                  </div>
+                {/* </ScrollAnimation> */}
+
+                <div className="child-expert5 animated bounceInUp delay-2s" > 
+                {/* data-aos="fade-down"
+                 data-aos-offset="200"
+                 data-aos-delay="50"
+                 data-aos-duration="4000" */}
+                  <div className="">
+                  <h4 className="main_title"><i className="icon ion-ios-world-outline"></i> Online Course </h4>
+                    <p className="text-justify content">
+                      Building knowledge, skills and competence in computer
+                      science field through virtual classes with our
+                      professional trainers.{" "}
                     </p>
                   </div>
                 </div>
 
-              </div>
-              <div className="col-12 col-md-6 section-wrapper twoside anim section-title text-center" margin-top="1vw">
-                <img className="img" src="img/cpu.jpg" alt="" height="350px" width="600px" position="absolute"/>
+                <div className="child-expert6 animated bounceInRight delay-2s" >
+                {/* data-aos="fade-left"
+                 data-aos-offset="200"
+                 data-aos-delay="50"
+                 data-aos-duration="4000" */}
+                  <div className="">
+                  <h4 className="main_title"><i className="icon ion-ios-world-outline"></i> Internet of Things(IoT) </h4>
+                    <p className="text-justify content">
+                      Feel connected with your devices by getting IoT
+                      development services provided by us.
+                    </p>
+                  </div>
+                </div>
               </div>
               
               {/* <div className="item row justify-content-between fade-1">
@@ -429,12 +483,87 @@ class App extends React.Component {
             data-section="projects"
           >
             <div className="section-wrapper twoside">
-              <div className="section-title text-center">
-                <h2 className="display-4 display-title">Projects</h2>
-                <p className="anim-2">Here are the list of our awesome pages.</p>
+              <div className="expert-container" >
+                <div className="child-expert1 animated fadeIn delay-2s" >
+                  <div className="">
+                    <p
+                      className="section-title typewrite"
+                      data-period="5000"
+                      data-type='[ "<h5><strong> e-Commerce Website & Application</strong></h5> Start your business online today to improve your business services. We provide eCommerce solutions to meet your requirements or budgets." ]'
+                    >
+                      <span className="wrap"></span>
+                    </p>
+                  </div>
+                </div>
+
+                {/* <div className="child-expert2 animated fadeIn delay-2s" >
+                  <div className="">
+                    <p
+                      className="section-title typewrite"
+                      data-period="5000"
+                      data-type='[ "<h4><strong> e-Commerce Website & Application</strong></h4> Start your business online today to improve your business services. We provide eCommerce solutions to meet your requirements or budgets." ]'
+                    >
+                      <span className="wrap"></span>
+                    </p>
+                  </div>
+                </div> */}
+
+                <div className="child-expert3 animated fadeIn delay-2s" >
+                  <div className="">
+                    <p
+                      className="section-title typewrite"
+                      data-period="5000"
+                      data-type='[ "<h5><strong>Augmented Reality & Virtual Reality</strong></h5> We provide the solutions by integrating the virtual and the real world. Our team is experienced IT professionals who create interactive content as it engaging and immersive experiences that present real-life opportunities for training and development. It all begins here." ]'
+                    >
+                      <span className="wrap"></span>
+                    </p>
+                  </div>
+                </div>
               </div>
-              
-              <div className="section-body">
+
+              <div className=" section-wrapper twoside anim section-title text-center" margin-top="1vw">
+                <img className="img" src="img/chipset.jpg" alt="" height="340px" width="550px" position="relative"/>
+              </div>
+
+              <div className="expert-container" >
+                <div className="child-expert4 project animated fadeIn delay-2s" >
+                  <div className="">
+                    <p
+                      className="section-title typewrite"
+                      data-period="5000"
+                      data-type='[ "<h5><strong>3D Model and Training Workshop</strong></h5> By using photogrammetry techniques and professional tools and we are produced the detailed 3D models in computer. We do provide training workshop!" ]'
+                    >
+                      <span className="wrap"></span>
+                    </p>
+                  </div>
+                </div>
+
+                {/* <div className="child-expert5 project animated fadeIn delay-2s" >
+                  <div className="">
+                    <p
+                      className="section-title typewrite"
+                      data-period="5000"
+                      data-type='[ "<h3><strong> e-Commerce Website & Application</strong></h3> Start your business online today to improve your business services. We provide eCommerce solutions to meet your requirements or budgets." ]'
+                    >
+                      <span className="wrap"></span>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="child-expert6 project animated fadeIn delay-2s" >
+                  <div className="">
+                    <p
+                      className="section-title typewrite"
+                      data-period="5000"
+                      data-type='[ "<h3><strong> e-Commerce Website & Application</strong></h3> Start your business online today to improve your business services. We provide eCommerce solutions to meet your requirements or budgets." ]'
+                    >
+                      <span className="wrap"></span>
+                    </p>
+                  </div>
+                </div> */}
+              </div> 
+
+              {/* <div className="section-body">
                 <div className="section-content content-full px-0 anim">
                   <div className="swiper-container slider-simple-a animated">
                     <div className="swiper-wrapper">
@@ -459,7 +588,6 @@ class App extends React.Component {
                                   {" "}
                                   –Learn More-{" "}
                                 </a>
-                                {/* style="background: #b02b4c;" */}
                               </p>
                             </div>
                           </div>
@@ -491,7 +619,6 @@ class App extends React.Component {
                                   {" "}
                                   –Learn More{" "}
                                 </a>
-                                {/* style="background: #b02b4c;" */}
                               </p>
                             </div>
                           </div>
@@ -518,7 +645,6 @@ class App extends React.Component {
                                   {" "}
                                   –Learn More{" "}
                                 </a>
-                                {/* style="background: #b02b4c;" */}
                               </p>
                             </div>
                           </div>
@@ -535,12 +661,12 @@ class App extends React.Component {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         
 
-        <div className="section section-twoside fp-auto-height-responsive" data-section="register" >
+        <div className="section section-twoside fp-auto-height-responsive" data-section="collaboration" >
           <div className="section-wrapper twoside">
             <div className="section-content anim text-center">
               <div className="swiper-container-team slider-simple-a animated">
@@ -550,7 +676,7 @@ class App extends React.Component {
                       <div className="images text-center">
                         <div className="img-avatar-alpha">
                           <div className="img-1 shadow">
-                            <a href="index.html#register">
+                            <a href="index.html#collaboration">
                               <img
                                 className="img"
                                 src="img/items/img-people1-square.jpg"
