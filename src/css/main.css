@@ -5270,12 +5270,17 @@ http://miradontsoa.com
     }
   
     .about {
-      animation:bounceInLeft;
+      animation:rollIn;
       animation-duration:10s;
+      margin-top: 6vw;
     }
 
     .sec-about {
       color:#DDE5E7; 
+    }
+
+    .sec-space {
+      margin-top: 8vw;
     }
 
     .expert-container {
@@ -5286,8 +5291,8 @@ http://miradontsoa.com
 
     .child-expert1 {
       position:absolute; 
-      left: -2vw;
-      top: -4vw;
+      left: -8vw;
+      top: 0vw;
       animation-duration: 10s;
       animation-delay: 2s;
       width: 15vw;
@@ -5295,7 +5300,7 @@ http://miradontsoa.com
 
     .child-expert2 {
       position:absolute; 
-      left: 26vw;
+      left: 22vw;
       top: -4vw;
       animation-duration: 10s;
       animation-delay: 2s;
@@ -5305,7 +5310,7 @@ http://miradontsoa.com
     .child-expert3 {
       position:absolute; 
       left: 52vw;
-      top: -4vw;
+      top: 0vw;
       animation-duration: 10s;
       animation-delay: 2s;
       width: 15vw;
@@ -5313,8 +5318,8 @@ http://miradontsoa.com
 
     .child-expert4 {
       position:absolute; 
-      left: -2vw;
-      bottom: -5vw;
+      left: -8vw;
+      bottom: 0vw;
       animation-duration: 10s;
       animation-delay: 2s;
       width: 15vw;
@@ -5322,8 +5327,8 @@ http://miradontsoa.com
 
     .child-expert5 {
       position:absolute; 
-      left: 26vw;
-      bottom: -5vw;
+      left: 22vw;
+      bottom: -6vw;
       animation-duration: 10s;
       animation-delay: 2s;
       width: 15vw;
@@ -5332,7 +5337,7 @@ http://miradontsoa.com
     .child-expert6 {
       position:absolute; 
       left: 52vw;
-      bottom: -5vw;
+      bottom: 0vw;
       animation-duration: 10s;
       animation-delay: 2s;
       width: 15vw;
