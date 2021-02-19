@@ -2,8 +2,8 @@
 import React from "react";
 import "./App.css";
 import "./css/main.css";
-import 'bootstrap/dist/css/bootstrap.css';
-import 'fullpage.js/vendors/scrolloverflow' // Optional. When using scrollOverflow:true
+import "bootstrap/dist/css/bootstrap.css";
+import "fullpage.js/vendors/scrolloverflow"; // Optional. When using scrollOverflow:true
 // import './fullpage.scrollHorizontally.min' // Optional. When using fullpage extensions
 // import AOS from 'aos';
 // import 'aos/dist/aos.css'; // You can also use <link> for styles
@@ -15,7 +15,7 @@ import { Fade } from "react-awesome-reveal";
 import { Bounce } from "react-awesome-reveal";
 
 // import ReactAnime from 'react-animejs';
-import Particles from 'react-particles-js';
+import Particles from "react-particles-js";
 // import Swiper from "swiper";
 // import Swiper, { Navigation, Pagination } from 'swiper';
 
@@ -158,7 +158,7 @@ class App extends React.Component {
             <div className="section-wrapper">
               <div className="section-content anim">
                 {/* <div className="row"> */}
-                  {/* <div className="col-12 col-md-6 text-left">
+                {/* <div className="col-12 col-md-6 text-left">
                     <div className="col-12 col-md-6 right-content hidden-sm center-vh">
                       <div className="section-content">
                         <div className="illustr zoomout-1">
@@ -198,34 +198,31 @@ class App extends React.Component {
                     </div>
                   </div> */}
 
-                  <div className="section-wrapper twoside anim section-title text-center">
-                    <img
-                      className="img"
-                      src="img/motherboard.jpg"
-                      alt=""
-                      height="400px"
-                      width="550px"
-                    />
-                  </div>
+                <div className="section-wrapper twoside anim section-title text-center">
+                  <img
+                    className="img"
+                    src="img/motherboard.jpg"
+                    alt=""
+                    height="400px"
+                    width="550px"
+                  />
+                </div>
                 {/* </div> */}
 
                 {/* <div className="row"> */}
-                  <div className="col-12" data-section="home">
-                    <div className="section-wrapper twoside anim">
-                      <div className="section-title text-center">
-                        <div className="display-4 display-title about">
-                          About Us
-                        </div>
+                <div className="col-12" data-section="home">
+                  <div className="section-wrapper twoside anim">
+                    <div className="section-title text-center">
+                      <div className="display-4 display-title about">
+                        About Us
                       </div>
                     </div>
                   </div>
+                </div>
                 {/* </div> */}
 
-                <div
-                  className="section section-description fp-auto-height-responsive "
-                  data-section="home"
-                >
-                {/* <div class="row"> */}
+                <div className="section-description fp-auto-height-responsive ">
+                  {/* <div class="row"> */}
                   <div className="section-wrapper center-vh dir-col twoside anim sec-space">
                     <div className="section-title text-center">
                       {/* <!-- <h5 className="title-bg">About</h5> -->
@@ -250,22 +247,20 @@ class App extends React.Component {
                       </div>
                     </div>
                   </div>
-                {/* </div> */}
+                  {/* </div> */}
                 </div>
 
-                <div
-                  className="section section-description fp-auto-height-responsive "
-                  data-section="home"
-                >
-                {/* <div class="row"> */}
+                <div className="section-description fp-auto-height-responsive ">
+                  {/* <div class="row"> */}
                   <div className="section-wrapper twoside anim">
                     <div className="section-title text-center">
                       <div className="display-4 display-title about">About</div>
                       {/* style="animation:bounceInLeft; animation-duration:10s" */}
                     </div>
-                    
-                    <div className="row sec-about">
-                        {/* <Fade direction="left"> */}
+
+                    <div className="row rowwidth">
+                      <div className="col-6">
+                        <Fade direction="left col-6">
                           <div className="col-12 col-md-6 col-lg-6 vision">
                             <h2>Vision</h2>
                             <ul>1. testing 1 </ul>
@@ -276,23 +271,26 @@ class App extends React.Component {
                             <ul>6. testing 2</ul>
                             <ul>7. testing 2</ul>
                           </div>
-                        {/* </Fade> */}
-
-                        {/* <Fade direction="right"> */}
-                        <div className="col-12 col-md-6 col-lg-6 mission">
-                            <h2>Mission</h2>
-                            <ul>1. testing 1</ul>
+                        </Fade>
+                      </div>
+                      <div className="col-6">
+                        <Fade direction="left col-6">
+                          <div className="col-12 col-md-6 col-lg-6 vision">
+                            <h2>Vision</h2>
+                            <ul>1. testing 1 </ul>
                             <ul>2. testing 2</ul>
                             <ul>3. testing 2</ul>
                             <ul>4. testing 2</ul>
                             <ul>5. testing 2</ul>
                             <ul>6. testing 2</ul>
                             <ul>7. testing 2</ul>
-                        </div>
-                        {/* </Fade> */}
+                          </div>
+                        </Fade>
+                        {/* </div> */}
+                      </div>
                     </div>
                   </div>
-                {/* </div> */}
+                  {/* </div> */}
                 </div>
               </div>
             </div>
@@ -314,7 +312,10 @@ class App extends React.Component {
             className="section section-list-feature fp-auto-height-responsive "
             data-section="services"
           >
-            <div className="section-wrapper twoside anim" data-section="services">
+            <div
+              className="section-wrapper twoside anim"
+              data-section="services"
+            >
               {/* <span className="section-title text-center ">
                 <h2 className="display-4 display-title ml2">Area of Expertise</h2>
               </span>
@@ -390,9 +391,7 @@ class App extends React.Component {
                 </Bounce>
               </div>
 
-              <div
-                className=" section-wrapper twoside anim section-title text-center"
-              >
+              <div className=" section-wrapper twoside anim section-title text-center">
                 <img
                   className="img"
                   src="img/cpu.jpg"
@@ -564,7 +563,7 @@ class App extends React.Component {
           >
             <div className="section-wrapper twoside">
               <div className="expert-container">
-                <Fade >
+                <Fade>
                   <div className="child-expert1 ">
                     {/* animated fadeIn delay-2s */}
                     <div className="">
@@ -622,7 +621,7 @@ class App extends React.Component {
               </div>
 
               <div className="expert-container">
-                <Fade >
+                <Fade>
                   <div className="child-expert4 project">
                     {/* animated fadeIn delay-2s */}
                     <div className="">
