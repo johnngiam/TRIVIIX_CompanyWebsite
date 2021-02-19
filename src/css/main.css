@@ -5283,6 +5283,16 @@ http://miradontsoa.com
       margin-top: 8vw;
     }
 
+    /* .vision {
+      animation:fadeInLeft;
+      animation-duration:10s;
+    }
+
+    .mission {
+      animation:fadeInRight;
+      animation-duration:10s;
+    } */
+
     .expert-container {
       position:relative;
       display:inline-block;
@@ -5319,7 +5329,7 @@ http://miradontsoa.com
     .child-expert4 {
       position:absolute; 
       left: -8vw;
-      bottom: 0vw;
+      bottom: -6vw;
       animation-duration: 10s;
       animation-delay: 2s;
       width: 15vw;
@@ -5328,7 +5338,7 @@ http://miradontsoa.com
     .child-expert5 {
       position:absolute; 
       left: 22vw;
-      bottom: -6vw;
+      bottom: -12vw;
       animation-duration: 10s;
       animation-delay: 2s;
       width: 15vw;
@@ -5337,7 +5347,7 @@ http://miradontsoa.com
     .child-expert6 {
       position:absolute; 
       left: 52vw;
-      bottom: 0vw;
+      bottom: -6vw;
       animation-duration: 10s;
       animation-delay: 2s;
       width: 15vw;

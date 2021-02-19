@@ -9,8 +9,10 @@ import 'fullpage.js/vendors/scrolloverflow' // Optional. When using scrollOverfl
 // import 'aos/dist/aos.css'; // You can also use <link> for styles
 // import ScrollAnimation from 'react-animate-on-scroll';
 // import "../node_modules/animate.css/animate.min.css";
-import Bounce from 'react-reveal/Bounce';
-import Fade from 'react-reveal/Fade';
+// import Bounce from 'react-reveal/Bounce';
+// import Fade from 'react-reveal/Fade';
+import { Fade } from "react-awesome-reveal";
+import { Bounce } from "react-awesome-reveal";
 
 // import ReactAnime from 'react-animejs';
 import Particles from 'react-particles-js';
@@ -263,9 +265,8 @@ class App extends React.Component {
                     </div>
                     
                     <div className="row sec-about">
-                      <Fade left>
-                        <div className="col-12 col-md-6 col-lg-6">
-                          <div className="section-content zoomout-1 fade-1">
+                        {/* <Fade direction="left"> */}
+                          <div className="col-12 col-md-6 col-lg-6 vision">
                             <h2>Vision</h2>
                             <ul>1. testing 1 </ul>
                             <ul>2. testing 2</ul>
@@ -275,12 +276,10 @@ class App extends React.Component {
                             <ul>6. testing 2</ul>
                             <ul>7. testing 2</ul>
                           </div>
-                        </div>
-                      </Fade>
+                        {/* </Fade> */}
 
-                      <Fade right>
-                        <div className="col-12 col-md-6 col-lg-6">
-                          <div className=" section-content zoomout-1 fade-4">
+                        {/* <Fade direction="right"> */}
+                        <div className="col-12 col-md-6 col-lg-6 mission">
                             <h2>Mission</h2>
                             <ul>1. testing 1</ul>
                             <ul>2. testing 2</ul>
@@ -289,9 +288,8 @@ class App extends React.Component {
                             <ul>5. testing 2</ul>
                             <ul>6. testing 2</ul>
                             <ul>7. testing 2</ul>
-                          </div>
                         </div>
-                      </Fade>
+                        {/* </Fade> */}
                     </div>
                   </div>
                 {/* </div> */}
@@ -332,7 +330,7 @@ class App extends React.Component {
 
               <div className="expert-container">
                 {/* <ScrollAnimation animateIn='bounceInLeft' animateOut='fadeOut'>  */}
-                <Bounce left delay={1000}>
+                <Bounce>
                   <div className="child-expert1 ">
                     {/* data-aos="fade-right" 
                 data-aos-offset="200"
@@ -353,7 +351,7 @@ class App extends React.Component {
                 </Bounce>
                 {/* </ScrollAnimation> */}
 
-                <Bounce down delay={2000}>
+                <Bounce down delay={1000}>
                   <div className="child-expert2 ">
                     {/* data-aos="fade-down"
                  data-aos-offset="200"
@@ -372,7 +370,7 @@ class App extends React.Component {
                   </div>
                 </Bounce>
 
-                <Bounce right delay={1000}>
+                <Bounce right>
                   <div className="child-expert3 ">
                     {/* data-aos="fade-left"
                  data-aos-offset="200"
@@ -407,7 +405,7 @@ class App extends React.Component {
 
               <div className="expert-container">
                 {/* <ScrollAnimation animateIn='fadeIn' animateOut='fadeOut'> delay-2s*/}
-                <Bounce right delay={1000}>
+                <Bounce right>
                   <div className="child-expert4">
                     {/* data-aos="fade-right" 
                   data-aos-offset="200"
@@ -427,7 +425,7 @@ class App extends React.Component {
                 </Bounce>
                 {/* </ScrollAnimation> */}
 
-                <Bounce up delay={2000}>
+                <Bounce up delay={1000}>
                   <div className="child-expert5">
                     {/* data-aos="fade-down"
                  data-aos-offset="200"
@@ -447,7 +445,7 @@ class App extends React.Component {
                   </div>
                 </Bounce>
 
-                <Bounce left delay={1000}>
+                <Bounce left>
                   <div className="child-expert6">
                     {/* data-aos="fade-left"
                  data-aos-offset="200"
@@ -566,7 +564,7 @@ class App extends React.Component {
           >
             <div className="section-wrapper twoside">
               <div className="expert-container">
-                <Fade>
+                <Fade >
                   <div className="child-expert1 ">
                     {/* animated fadeIn delay-2s */}
                     <div className="">
