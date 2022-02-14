@@ -2908,6 +2908,10 @@ http://miradontsoa.com
   /* 4.1 Default settings .page-main */
   .page-main {
     min-height: 100%; }
+
+  .test {
+    height: 2000px;
+  }
   
   .body-page {
     background-color: #1d1d1d;
@@ -5296,7 +5300,7 @@ http://miradontsoa.com
     .expert-container {
       position:relative;
       display:inline-block;
-      height:6vw;
+      height:20vw;
     }
 
     .child-expert1 {
