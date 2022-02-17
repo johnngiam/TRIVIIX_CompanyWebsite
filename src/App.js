@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import "./css/main.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -37,7 +37,6 @@ class App extends React.Component {
     // reference to the DOM node
     this.companyAboutUs = null;
     this.companyAreaExpertise = null;
-    this.companyAreaExpertise = null;
     this.companyPreviousProject = null;
     this.companyMember = null;
     this.companyContactUs = null;
@@ -50,19 +49,45 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    //use the node ref to create the animation
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  Scroll Location Tracker Component
+    window.addEventListener('scroll', this.listenToScroll)
+    // gsap
+    //   .set(this.companyAboutUs, 2, {display: "block", autoAlpha: 1, y: -9000})
+    //   .set(this.companyAboutUs, 2, {display: "block", autoAlpha: 1, y: -9000})
+    //   .set(this.companyAboutUs, 2, {display: "block", autoAlpha: 1, y: -9000})
+    //   .set(this.companyAboutUs, 2, {display: "block", autoAlpha: 1, y: -9000})
+    //   .set(this.companyAboutUs, 2, {display: "block", autoAlpha: 1, y: -9000});
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  Animation Component
+  //use the node ref to create the animation
     this.mainTimeline
-      .to(this.companyAboutUs, 2, {y: -9000})
-      .to(this.companyAreaExpertise, 2, { x: -500, y: -8100})
-      .to(this.companyPreviousProject, 2, { y: -7600})
-      .to(this.companyMember, 2, { y: -7100})
-      .to(this.companyContactUs, 2, { y: -2000 })
+      .to(this.companyAboutUs, 2, {display: "block", autoAlpha: 1, y: -9000})
+      .to(this.companyAreaExpertise, 2, {display: "block", x: -500, y: -7000})
+      .to(this.companyPreviousProject, 2, {display: "block", y: -6700})
+      .to(this.companyMember, 2, {display: "block", y: -6200})
+      .to(this.companyContactUs, 2, {display: "block"})
       .play();
   }
 
+  componentWillUnmount() {
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  Scroll Location Tracker Component
+    window.removeEventListener('scroll', this.listenToScroll)
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  Scroll Location Tracker Component
+  listenToScroll = () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    const scrolled = winScroll / height;
+
+    this.setState({
+      thePosition: scrolled,
+    })
+  }
+
   render() {
-    // const {Anime} = ReactAnime
-    // AOS.init();
+    console.log("hello something here?: ", this.state);
 
     return (
       <div className="App">
@@ -203,7 +228,7 @@ class App extends React.Component {
         </div>
 
         <main className="page-main page-fullpage main-anim test">
-          <section className="test" ref={div => this.companyAboutUs = div}>
+          <section ref={div => this.companyAboutUs = div} style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }}>
             <div
               className="section section-home fullscreen-md fp-auto-height-responsive "
               data-section="home"
@@ -350,6 +375,42 @@ class App extends React.Component {
             </div>
           </section>
 
+{/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  Scroll Navigation Bar */}
+          <nav>
+            <ul>
+              <li>
+                <a href="#intro">
+                  <span class="nav-dot"></span>
+                  <span class="nav-label">Intro</span>
+                </a>
+              </li>
+              <li>
+                <a href="#slide01">
+                  <span class="nav-dot"></span>
+                  <span class="nav-label">Slide One</span>
+                </a>
+              </li>
+              <li>
+                <a href="#slide02">
+                  <span class="nav-dot"></span>
+                  <span class="nav-label">Slide Two</span>
+                </a>
+              </li>
+              <li>
+                <a href="#slide03">
+                  <span class="nav-dot"></span>
+                  <span class="nav-label">Slide Three</span>
+                </a>
+              </li>
+              <li>
+                <a href="#slide04">
+                  <span class="nav-dot"></span>
+                  <span class="nav-label">Slide Forth</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
           {/* <div
             className="section section-description fp-auto-height-responsive "
             data-section="about"
@@ -362,7 +423,7 @@ class App extends React.Component {
             data-section="about1"
           ></div> */}
 
-          <section ref={div => this.companyAreaExpertise = div}>
+          <section ref={div => this.companyAreaExpertise = div} style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }}>
             <div
               className="section section-list-feature fp-auto-height-responsive "
               data-section="services"
@@ -613,7 +674,7 @@ class App extends React.Component {
             </div>
           </section>
           
-          <section ref={div => this.companyPreviousProject = div}>
+          <section ref={div => this.companyPreviousProject = div} style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }}>
             <div
               className="section section-twoside fp-auto-height-responsive "
               data-section="projects"
@@ -821,7 +882,7 @@ class App extends React.Component {
             </div>
           </section>
 
-          <section ref={div => this.companyMember = div}>
+          <section ref={div => this.companyMember = div} style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }}>
             <div
               className="section section-twoside fp-auto-height-responsive"
               data-section="collaboration"
@@ -1043,165 +1104,166 @@ class App extends React.Component {
             </div>
           </section>
 
-          <section>
-          <div
-            className="section section-contact fp-auto-height-responsive no-slide-arrows"
-            data-section="contact"
-          >
-            <div className="slide" id="information" data-anchor="information">
-              <div className="section-wrapper">
-                <div className="row">
-                  <div className="col-12 col-md-6">
-                    <div className="section-content anim text-left">
-                      <div className="title-desc">
-                        <div className="anim-2">
-                          {/* <h5></h5> */}
-                          <h2 className="display-4 display-title">Contact</h2>
-                          <p>
-                            Interested in learning more about our services?
-                            <br />
-                            For questions about our company and products,
-                            Contact us.
-                            <br />
-                            We ensure you will receiving the best information
-                            possible.
-                            <br />
-                            From basic questions to complex compliance
-                            inquiries,
-                            <br />
-                            we're here to help!
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="address-container anim-3">
-                        <div className="row">
-                          <div className="col-12 col-md-12 col-lg-6">
-                            <h4>Contact</h4>
-                            <p>Call: 082 753 793</p>
-                            <p>Call: 082 753 792</p>
-                            <p>Email: tic.unimas@gmail.com</p>
-                          </div>
-                          <div className="col-12 col-md-12 col-lg-6">
-                            <h4>Address</h4>
+          <section ref={div => this.companyContactUs = div}>
+            <div
+              className="section section-contact fp-auto-height-responsive no-slide-arrows"
+              data-section="contact"
+            >
+              <div className="slide" id="information" data-anchor="information">
+                <div className="section-wrapper">
+                  <div className="row">
+                    <div className="col-12 col-md-6">
+                      <div className="section-content anim text-left">
+                        <div className="title-desc">
+                          <div className="anim-2">
+                            {/* <h5></h5> */}
+                            <h2 className="display-4 display-title">Contact</h2>
                             <p>
-                              Company address
+                              Interested in learning more about our services?
                               <br />
-                              TIC Main Office, FCSIT
+                              For questions about our company and products,
+                              Contact us.
                               <br />
-                              Universiti Malaysia Sarawak
+                              We ensure you will receiving the best information
+                              possible.
                               <br />
-                              94300 Kota Samarahan, Sarawak.
+                              From basic questions to complex compliance
+                              inquiries,
+                              <br />
+                              we're here to help!
                             </p>
                           </div>
                         </div>
-                      </div>
 
-                      <div className="btns-action anim-4">
-                        <a
-                          className="btn btn-outline-white btn-round"
-                          href="#contact/message"
-                        >
-                          <span className="txt">Send Message</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-md-6"></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="slide" id="message" data-anchor="message">
-              <div className="section-wrapper">
-                <div className="row justify-content-between">
-                  <div className="col-12 col-md-6 center-vh">
-                    <div className="section-content anim text-left">
-                      <div className="title-desc">
-                        <div>
-                          {/* <h5></h5> */}
-                          <h2 className="display-4 display-title">Email Us</h2>
-                          <p>
-                            {" "}
-                            Want to get more information? Here's how you can
-                            reach us by email. Send your enquiries and we will
-                            get back to you shortly!{" "}
-                          </p>
+                        <div className="address-container anim-3">
+                          <div className="row">
+                            <div className="col-12 col-md-12 col-lg-6">
+                              <h4>Contact</h4>
+                              <p>Call: 082 753 793</p>
+                              <p>Call: 082 753 792</p>
+                              <p>Email: tic.unimas@gmail.com</p>
+                            </div>
+                            <div className="col-12 col-md-12 col-lg-6">
+                              <h4>Address</h4>
+                              <p>
+                                Company address
+                                <br />
+                                TIC Main Office, FCSIT
+                                <br />
+                                Universiti Malaysia Sarawak
+                                <br />
+                                94300 Kota Samarahan, Sarawak.
+                              </p>
+                            </div>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="btns-action">
-                        <a
-                          className="btn btn-outline-white btn-round"
-                          href="#contact/information"
-                        >
-                          <span className="txt">Information</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-md-6 col-lg-5">
-                    <div className="section-content anim text-left">
-                      <div className="">
-                        <div className="form-container form-container-card">
-                          <form
-                            className="send_message_form message form"
-                            method="post"
-                            action="ajaxserver/serverfile.php"
-                            id="message_form"
+                        <div className="btns-action anim-4">
+                          <a
+                            className="btn btn-outline-white btn-round"
+                            href="#contact/message"
                           >
-                            <div className="form-group name">
-                              <label htmlFor="mes-name">Name :</label>
-                              <input
-                                id="mes-name"
-                                name="name"
-                                type="text"
-                                placeholder=""
-                                className="form-control-line form-success-clean"
-                                required
-                              />
-                            </div>
-                            <div className="form-group email">
-                              <label htmlFor="mes-email">Email :</label>
-                              <input
-                                id="mes-email"
-                                type="email"
-                                placeholder=""
-                                name="email"
-                                className="form-control-line form-success-clean"
-                                required
-                              />
-                            </div>
-                            <div className="form-group no-border">
-                              <label htmlFor="mes-text">Message</label>
-                              <textarea
-                                id="mes-text"
-                                placeholder="..."
-                                name="message"
-                                className="form-control form-control-outline thick form-success-clean"
-                                required
-                              ></textarea>
+                            <span className="txt">Send Message</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
 
-                              <div>
-                                <p className="message-ok invisible form-text-feedback form-success-visible">
-                                  Your message has been sent, thank you.
-                                </p>
+                    <div className="col-12 col-md-6"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="slide" id="message" data-anchor="message">
+                <div className="section-wrapper">
+                  <div className="row justify-content-between">
+                    <div className="col-12 col-md-6 center-vh">
+                      <div className="section-content anim text-left">
+                        <div className="title-desc">
+                          <div>
+                            {/* <h5></h5> */}
+                            <h2 className="display-4 display-title">Email Us</h2>
+                            <p>
+                              {" "}
+                              Want to get more information? Here's how you can
+                              reach us by email. Send your enquiries and we will
+                              get back to you shortly!{" "}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="btns-action">
+                          <a
+                            className="btn btn-outline-white btn-round"
+                            href="#contact/information"
+                          >
+                            <span className="txt">Information</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="col-12 col-md-6 col-lg-5">
+                      <div className="section-content anim text-left">
+                        <div className="">
+                          <div className="form-container form-container-card">
+                            <form
+                              className="send_message_form message form"
+                              method="post"
+                              action="ajaxserver/serverfile.php"
+                              id="message_form"
+                            >
+                              <div className="form-group name">
+                                <label htmlFor="mes-name">Name :</label>
+                                <input
+                                  id="mes-name"
+                                  name="name"
+                                  type="text"
+                                  placeholder=""
+                                  className="form-control-line form-success-clean"
+                                  required
+                                />
                               </div>
-                            </div>
+                              <div className="form-group email">
+                                <label htmlFor="mes-email">Email :</label>
+                                <input
+                                  id="mes-email"
+                                  type="email"
+                                  placeholder=""
+                                  name="email"
+                                  className="form-control-line form-success-clean"
+                                  required
+                                />
+                              </div>
+                              <div className="form-group no-border">
+                                <label htmlFor="mes-text">Message</label>
+                                <textarea
+                                  id="mes-text"
+                                  placeholder="..."
+                                  name="message"
+                                  className="form-control form-control-outline thick form-success-clean"
+                                  required
+                                ></textarea>
 
-                            <div className="btns">
-                              <button
-                                id="submit-message"
-                                className="btn btn-normal btn-white btn-round btn-full email_b"
-                                name="submit_message"
-                              >
-                                <span className="txt">Send</span>
-                                <span className="arrow-icon"></span>
-                              </button>
-                            </div>
-                          </form>
+                                <div>
+                                  <p className="message-ok invisible form-text-feedback form-success-visible">
+                                    Your message has been sent, thank you.
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div className="btns">
+                                <button
+                                  id="submit-message"
+                                  className="btn btn-normal btn-white btn-round btn-full email_b"
+                                  name="submit_message"
+                                >
+                                  <span className="txt">Send</span>
+                                  <span className="arrow-icon"></span>
+                                </button>
+                              </div>
+                            </form>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1209,7 +1271,6 @@ class App extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
           </section>
         </main>
 
