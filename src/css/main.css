@@ -4680,6 +4680,11 @@ textarea {
   }
 }
 
+.company-area-expertise-position-adjust {
+  top: -5800px;
+  right: 30%;
+}
+
 /* 5.2 Home section layout */
 .section-home {
   display: flex;
@@ -7163,10 +7168,6 @@ h4 {
 /* 7. Scrollbar  */
 /* 7.1 Scrollbar navigation */
 
-/* --lightest: #fff;
---darkest: #212121;
---black: #000; */
-
 nav {
   display: none;
   position: fixed;
@@ -7234,5 +7235,3 @@ nav li {
   width: auto;
   list-style: none;
 }
-
-/* 7.2 Scrollbar Main*/

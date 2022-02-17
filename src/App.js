@@ -23,10 +23,13 @@ import Particles from "react-particles-js";
 // import Swiper, { Navigation, Pagination } from 'swiper';
 
 import ReactDOM from "react-dom";
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  Background Image Scrolling Animation
 import "./styles.css";
 import { Controller, Scene } from 'react-scrollmagic';
 import Sequence from "./Sequence"
 import { gsap } from "gsap";
+
+import { scroller } from "react-scroll";
 
 class App extends React.Component {
   constructor(props) {
@@ -60,13 +63,13 @@ class App extends React.Component {
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  Animation Component
   //use the node ref to create the animation
-    this.mainTimeline
-      .to(this.companyAboutUs, 2, {display: "block", autoAlpha: 1, y: -9000})
-      .to(this.companyAreaExpertise, 2, {display: "block", x: -500, y: -7000})
-      .to(this.companyPreviousProject, 2, {display: "block", y: -6700})
-      .to(this.companyMember, 2, {display: "block", y: -6200})
-      .to(this.companyContactUs, 2, {display: "block"})
-      .play();
+    // this.mainTimeline
+    //   .to(this.companyAboutUs, 2, {display: "block", autoAlpha: 1, y: -9000})
+    //   .to(this.companyAreaExpertise, 2, {display: "block", x: -500, y: -7000})
+    //   .to(this.companyPreviousProject, 2, {display: "block", y: -6700})
+    //   .to(this.companyMember, 2, {display: "block", y: -6200})
+    //   .to(this.companyContactUs, 2, {display: "block"})
+    //   .play();
   }
 
   componentWillUnmount() {
@@ -85,6 +88,15 @@ class App extends React.Component {
       thePosition: scrolled,
     })
   }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  Auto Navigate Scroller Component
+  scrollToSection = () => {
+    scroller.scrollTo("section-company-member", {
+      duration: 1000,
+      delay: 0,
+      smooth: true,
+    });
+  };
 
   render() {
     console.log("hello something here?: ", this.state);
@@ -228,7 +240,10 @@ class App extends React.Component {
         </div>
 
         <main className="page-main page-fullpage main-anim test">
-          <section ref={div => this.companyAboutUs = div} style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }}>
+          <section 
+            ref={div => this.companyAboutUs = div} 
+            // style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }}
+          >
             <div
               className="section section-home fullscreen-md fp-auto-height-responsive "
               data-section="home"
@@ -379,7 +394,7 @@ class App extends React.Component {
           <nav>
             <ul>
               <li>
-                <a href="#intro">
+                <a>
                   <span class="nav-dot"></span>
                   <span class="nav-label">Intro</span>
                 </a>
@@ -403,7 +418,7 @@ class App extends React.Component {
                 </a>
               </li>
               <li>
-                <a href="#slide04">
+                <a onClick={this.scrollToSection}>
                   <span class="nav-dot"></span>
                   <span class="nav-label">Slide Forth</span>
                 </a>
@@ -423,9 +438,12 @@ class App extends React.Component {
             data-section="about1"
           ></div> */}
 
-          <section ref={div => this.companyAreaExpertise = div} style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }}>
+          <section 
+            ref={div => this.companyAreaExpertise = div} 
+            // style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }}
+          >
             <div
-              className="section section-list-feature fp-auto-height-responsive "
+              className="section section-list-feature fp-auto-height-responsive company-area-expertise-position-adjust"
               data-section="services"
             >
               <div
@@ -674,9 +692,12 @@ class App extends React.Component {
             </div>
           </section>
           
-          <section ref={div => this.companyPreviousProject = div} style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }}>
+          <section 
+            ref={div => this.companyPreviousProject = div} 
+            // style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }}
+          >
             <div
-              className="section section-twoside fp-auto-height-responsive "
+              className="section section-twoside fp-auto-height-responsive"
               data-section="projects"
             >
               <div className="section-wrapper twoside">
@@ -882,7 +903,11 @@ class App extends React.Component {
             </div>
           </section>
 
-          <section ref={div => this.companyMember = div} style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }}>
+          <section 
+            ref={div => this.companyMember = div} 
+            // style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }} 
+            className="section-company-member"
+          >
             <div
               className="section section-twoside fp-auto-height-responsive"
               data-section="collaboration"
@@ -1104,7 +1129,9 @@ class App extends React.Component {
             </div>
           </section>
 
-          <section ref={div => this.companyContactUs = div}>
+          <section 
+            ref={div => this.companyContactUs = div}
+          >
             <div
               className="section section-contact fp-auto-height-responsive no-slide-arrows"
               data-section="contact"
