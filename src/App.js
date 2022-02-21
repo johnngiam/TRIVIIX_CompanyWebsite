@@ -90,12 +90,56 @@ class App extends React.Component {
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  Auto Navigate Scroller Component
-  scrollToSection = () => {
-    scroller.scrollTo("section-company-member", {
-      duration: 1000,
-      delay: 0,
-      smooth: true,
-    });
+  scrollToSection = (navigationInstructions) => {
+    console.log("navigationInstructions:", navigationInstructions);
+    if (navigationInstructions === 'scrollToCompanyAboutUs') {
+      scroller.scrollTo("section-company-about-us", {
+        duration: 1000,
+        delay: 0,
+        smooth: true,
+        offset: 290,
+      });
+    }
+    else if(navigationInstructions === 'scrollToCompanyAreaExpertise')
+    {
+      scroller.scrollTo("section-company-area-expertise", {
+        duration: 1000,
+        delay: 0,
+        smooth: true,
+        offset: -256,
+      });
+    }
+    else if(navigationInstructions === 'scrollToCompanyPreviousProject')
+    {
+      scroller.scrollTo("section-company-previous-project", {
+        duration: 1000,
+        delay: 0,
+        smooth: true,
+        offset: -100,
+      });
+    }
+    else if(navigationInstructions === 'scrollToCompanyMember')
+    {
+      scroller.scrollTo("section-company-member", {
+        duration: 1000,
+        delay: 0,
+        smooth: true,
+        offset: -30,
+      });
+    }
+    else if(navigationInstructions === 'scrollToCompanyContactUs')
+    {
+      scroller.scrollTo("section-contact-us", {
+        duration: 1000,
+        delay: 0,
+        smooth: true,
+      });
+    }
+    else 
+    {
+      console.log("something wrong");
+    }
+    
   };
 
   render() {
@@ -239,13 +283,13 @@ class App extends React.Component {
           ></div>
         </div>
 
-        <main className="page-main page-fullpage main-anim test">
+        <main className="page-main page-fullpage main-anim">
           <section 
             ref={div => this.companyAboutUs = div} 
-            // style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }}
+            style={{ display: this.state.thePosition <= 0.75 ? "block" : "hidden" }}
           >
             <div
-              className="section section-home fullscreen-md fp-auto-height-responsive "
+              className="section section-home fullscreen-md fp-auto-height-responsive section-company-about-us company-about-us-position-adjust"
               data-section="home"
             >
               <div className="section-wrapper">
@@ -394,33 +438,33 @@ class App extends React.Component {
           <nav>
             <ul>
               <li>
-                <a>
+                <a onClick={() => this.scrollToSection('scrollToCompanyAboutUs')}>
                   <span class="nav-dot"></span>
-                  <span class="nav-label">Intro</span>
+                  <span class="nav-label">About Us</span>
                 </a>
               </li>
               <li>
-                <a href="#slide01">
+                <a onClick={() => this.scrollToSection('scrollToCompanyAreaExpertise')}>
                   <span class="nav-dot"></span>
-                  <span class="nav-label">Slide One</span>
+                  <span class="nav-label">Area Expertise</span>
                 </a>
               </li>
               <li>
-                <a href="#slide02">
+                <a onClick={() => this.scrollToSection('scrollToCompanyPreviousProject')}>
                   <span class="nav-dot"></span>
-                  <span class="nav-label">Slide Two</span>
+                  <span class="nav-label">Our Previous Project</span>
                 </a>
               </li>
               <li>
-                <a href="#slide03">
+                <a onClick={() => this.scrollToSection('scrollToCompanyMember')}>
                   <span class="nav-dot"></span>
-                  <span class="nav-label">Slide Three</span>
+                  <span class="nav-label">Our Member</span>
                 </a>
               </li>
               <li>
-                <a onClick={this.scrollToSection}>
+                <a onClick={() => this.scrollToSection('scrollToCompanyContactUs')}>
                   <span class="nav-dot"></span>
-                  <span class="nav-label">Slide Forth</span>
+                  <span class="nav-label">Contact Us</span>
                 </a>
               </li>
             </ul>
@@ -440,10 +484,10 @@ class App extends React.Component {
 
           <section 
             ref={div => this.companyAreaExpertise = div} 
-            // style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }}
+            style={{ display: this.state.thePosition <= 0.75 ? "block" : "hidden" }}
           >
             <div
-              className="section section-list-feature fp-auto-height-responsive company-area-expertise-position-adjust"
+              className="section section-list-feature fp-auto-height-responsive section-company-area-expertise company-area-expertise-position-adjust"
               data-section="services"
             >
               <div
@@ -694,10 +738,10 @@ class App extends React.Component {
           
           <section 
             ref={div => this.companyPreviousProject = div} 
-            // style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }}
+            style={{ display: this.state.thePosition <= 0.75 ? "block" : "hidden" }}
           >
             <div
-              className="section section-twoside fp-auto-height-responsive"
+              className="section section-twoside fp-auto-height-responsive section-company-previous-project company-previous-project-position-adjust"
               data-section="projects"
             >
               <div className="section-wrapper twoside">
@@ -905,11 +949,10 @@ class App extends React.Component {
 
           <section 
             ref={div => this.companyMember = div} 
-            // style={{ display: this.state.thePosition <= 0.75 ? "block" : "none" }} 
-            className="section-company-member"
+            style={{ display: this.state.thePosition <= 0.75 ? "block" : "hidden" }} 
           >
             <div
-              className="section section-twoside fp-auto-height-responsive"
+              className="section section-twoside fp-auto-height-responsive section-company-member company-member-position-adjust"
               data-section="collaboration"
             >
               <div className="section-wrapper twoside">
@@ -1131,6 +1174,7 @@ class App extends React.Component {
 
           <section 
             ref={div => this.companyContactUs = div}
+            className="section-contact-us"
           >
             <div
               className="section section-contact fp-auto-height-responsive no-slide-arrows"
@@ -1201,7 +1245,7 @@ class App extends React.Component {
                 </div>
               </div>
 
-              <div className="slide" id="message" data-anchor="message">
+              <div className="slide section-contact-us" id="message" data-anchor="message">
                 <div className="section-wrapper">
                   <div className="row justify-content-between">
                     <div className="col-12 col-md-6 center-vh">
